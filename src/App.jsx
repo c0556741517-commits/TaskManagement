@@ -33,8 +33,8 @@ function App() {
           <Route path='/login' element={<Suspense fallback={<div className="loading">טוען...</div>}><LoginForm /></Suspense>} />
           <Route path='/projects' element={<Suspense fallback={<div className="loading">טוען...</div>}><LazyViewProjects /></Suspense>} />
           <Route path='/projects/add' element={<Suspense fallback={<div className="loading">טוען...</div>}><LazyAddProject /></Suspense>} />
-          <Route path='/tasks' element={<Suspense fallback={<div className="loading">טוען...</div>}><LazyViewTasks /></Suspense>} />
-          <Route path='/tasks/add' element={<Suspense fallback={<div className="loading">טוען...</div>}><LazyAddTask /></Suspense>} />
+          <Route path='/tasks/add/:id' element={<Suspense fallback={<div className="loading">טוען...</div>}><LazyAddTask /></Suspense>} />
+          <Route path='/tasks/:projectId' element={<Suspense fallback={<div className="loading">טוען...</div>}><LazyViewTasks /></Suspense>} />
           <Route path='/tasks/update/:id' element={<Suspense fallback={<div className="loading">טוען...</div>}><LazyUpdateTask /></Suspense>} />
           <Route path='/projects/edit/:id' element={<Suspense fallback={<div className="loading">טוען...</div>}><LazyProjectEditing /></Suspense>} />
         </Routes>

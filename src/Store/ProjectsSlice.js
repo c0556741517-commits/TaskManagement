@@ -1,4 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { deleteTasks } from './TasksSlice';
+import { useDispatch } from 'react-redux';
 const initVal = {
     projectsList: [] 
 }
@@ -11,7 +13,9 @@ const ProjectsSlice = createSlice({
             state.projectsList.push(action.payload);
         },
         deleteProject: (state, action) => {
-            state.projectsList = state.projectsList.filter(p => p.id !== action.payload);
+            state.projectsList = state.projectsList.filter(p => p.id !== action.payload.id);
+            const dispatch = useDispatch();
+            dispatch(deleteTasks(action.payload.id))
         },
         updateProject: (state, action) => {
             const index = state.projectsList.findIndex(p => p.id === action.payload.id);
