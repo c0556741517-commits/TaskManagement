@@ -2,7 +2,26 @@ import { createSlice } from '@reduxjs/toolkit'
 import { deleteTasks } from './TasksSlice';
 import { useDispatch } from 'react-redux';
 const initVal = {
-    projectsList: [] 
+    projectsList: [
+        {
+            id: 1,
+            name: "Project 1",
+            description: "Description 1",
+            startDate: "2020-01-01",
+            endDate: "2020-12-31",
+            status: "Active",
+            preference: "High"
+        },
+           {
+            id: 2,
+            name: "Project 2",
+            description: "Description 2",
+            startDate: "2020-01-01",
+            endDate: "2020-12-31",
+            status: "Active",
+            preference: "High"
+        }
+    ] 
 }
 
 const ProjectsSlice = createSlice({
